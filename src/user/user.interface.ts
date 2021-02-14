@@ -1,0 +1,9 @@
+export interface UserRO {
+    id: string;
+    firstName: string;
+    lastName: string;
+    username: string;
+    email: string;
+    accessToken: string;
+    refreshToken: string;
+}

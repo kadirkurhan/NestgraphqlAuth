@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  id: ID!
+  username: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  accessToken: String!
+  refreshToken: String!
+}
+
+type Query {
+  me: UserEntity!
+}
+
+type Mutation {
+  login(loginData: LoginDto!): UserEntity!
+  register(registerData: RegisterDto!): UserEntity!
+  forgetPassword(forgetPasswordData: ForgetPasswordDto!): String!
+  resetPassword(resetPasswordData: ResetPasswordDto!): UserEntity!
+  refreshToken(refreshTokenData: RefreshTokenDto!): UserEntity!
+}
+
+input LoginDto {
+  username: String!
+  password: String!
+}
+
+input RegisterDto {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input ForgetPasswordDto {
+  username: String!
+}
+
+input ResetPasswordDto {
+  forgetPasswordToken: String!
+  username: String!
+  newPassword: String!
+}
+
+input RefreshTokenDto {
+  refreshToken: String!
+}
